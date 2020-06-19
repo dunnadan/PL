@@ -4,24 +4,24 @@
 /* Declaracoes C diversas */
 %}
 
-%union{ char* str; }
+%union{ char* str; int num; }
 
 %token SUBJECT PREDICATE ID STR NUM
 %type <str> SUBJECT
 %type <str> PREDICATE
+%type <num> NUM
 %%
-//start token?
-Onthology : START Content
+Onthology : ListTriplos
           ;
 
-Content : Content Individual
-        |
-        ;
+ListTriplos : ListTriplos Triplo
+            | Triplo
+            ;
 
-Individual : ':' SUBJECT ':' PREDICATE ':' Object Symbol
-           | ':' PREDICATE ':' Object Symbol
-           | ':' Object Symbol
-           ;
+Triplo : ':' SUBJECT PREDICATE Object Symbol
+       | ':' PREDICATE Object Symbol
+       | ':' Object Symbol
+       ;
 
 Object : ID
        | STR
