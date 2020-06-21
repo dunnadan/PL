@@ -25,29 +25,25 @@ ListIndividuals : ListIndividuals Individual
                 | Individual
                 ;
 
-Property : ':' PSUBJECT PPREDICATE Object Symbol
-         | ':' PPREDICATE Object Symbol
-         | ':' Object Symbol
+Property : PSUBJECT PPREDICATE Object
+         | PPREDICATE Object
+         | Object
          ;
 
-Class : ':' CSUBJECT CPREDICATE Object Symbol
-      | ':' CPREDICATE Object Symbol
-      | ':' Object Symbol
+Class : CSUBJECT CPREDICATE Object
+      | CPREDICATE Object
+      | Object
       ;
 
-Individual : ':' ISUBJECT IPREDICATE Object Symbol
-           | ':' IPREDICATE Object Symbol
-           | ':' Object Symbol
+Individual : ISUBJECT IPREDICATE Object
+           | IPREDICATE Object
+           | Object
            ;
 
 Object : ID
        | STR
        | NUM
 
-Symbol : '.'
-       | ','
-       | ';'
-       ;
 %%
 
 int yyerror(char *s){
