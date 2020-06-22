@@ -1,0 +1,40 @@
+:eMaeDe rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :eProgenitorDe ;
+        owl:inverseOf :temMae .
+ 
+ 
+###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#ePaiDe
+:ePaiDe rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :eProgenitorDe ;
+        owl:inverseOf :temPai .
+
+
+#Classes
+
+###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Feminino
+:Feminino rdf:type owl:Class ;
+          rdfs:subClassOf :Sexo ;
+          owl:disjointWith :Masculino .
+
+
+###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Masculino
+:Masculino rdf:type owl:Class ;
+           rdfs:subClassOf :Sexo .
+
+
+
+#Individuals
+
+###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Abilio_Silva_Ramalho
+:Abilio_Silva_Ramalho rdf:type owl:NamedIndividual ,
+                               :Pessoa ;
+                      :temMae :Custodia_Azevedo_1867 ;
+                      :temPai :Manuel_Silva_Ramalho_1866 .
+
+
+###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Albina_Esteves_Araujo_1910
+:Albina_Esteves_Araujo_1910 rdf:type owl:NamedIndividual ,
+                                     :Pessoa ;
+                            :temMae :Maria_Araujo_1884 ;
+                            :temPai :Henrique_Luiz_Araujo_1867 .
+

@@ -3,16 +3,20 @@
 %{
 #include <stdio.h>
 #include <string.h>
+char* comp = " ;";
 %}
 
-%s DP
-
+%s DP PRED IND
 %%
-
-^:                                  {BEGIN DP;}
-<DP>[a-zA-Z]*/.*:ObjectProperty     {BEGIN INITIAL; printf("%s\n", yytext);}
-.|\n                                { ; }
-
+[a-zA-Z0-9_]*\ [;.,]                                               {if(strcmp(comp,yytext) != 0){      //objects
+                                                                        yytext[yyleng-2] = '\0';
+                                                                        printf("Object:%s\n", yytext);
+                                                                        }
+                                                                    }
+(^:[ a-zA-Z]*rdf:|\t*rdf:|\t*rdfs:|\t+owl:)                         {BEGIN PRED;}
+<PRED>[a-zA-Z]+                                                     {BEGIN INITIAL; printf("%s\n",yytext); //preds (nao apanha os owls) 
+                                                                    }  
+.|\n                                                                { ; }
 %%
 
 int main(int argc, char** argv){
@@ -21,3 +25,4 @@ int main(int argc, char** argv){
     fclose(yyin);
     return 0;
 }
+
