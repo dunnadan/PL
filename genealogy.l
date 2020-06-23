@@ -6,16 +6,15 @@
 char* comp = " ;";
 %}
 
-%s DP PRED IND
+%s DP PRED IND PPRED
 %%
-[a-zA-Z0-9_]*\ [;.,]                                               {if(strcmp(comp,yytext) != 0){      //objects
+[a-zA-Z0-9_]*\ [;.,]                                                {if(strcmp(comp,yytext) != 0){      //all objects
                                                                         yytext[yyleng-2] = '\0';
-                                                                        printf("Object:%s\n", yytext);
                                                                         }
                                                                     }
-(^:[ a-zA-Z]*rdf:|\t*rdf:|\t*rdfs:|\t+owl:)                         {BEGIN PRED;}
-<PRED>[a-zA-Z]+                                                     {BEGIN INITIAL; printf("%s\n",yytext); //preds (nao apanha os owls) 
-                                                                    }  
+(^:eMaeDe.*\n{1,2}.*)                                               {BEGIN PPRED;}
+<PPRED>(\n[ \t]+:|^:[ a-zA-Z]*rdf:|\t*rdf:|\t*rdfs:|\n[  ]*owl:)    {BEGIN PRED;}
+<PRED>[a-zA-Z]+                                                     {BEGIN INITIAL; printf("%s\n",yytext);} /*all predicates*/  
 .|\n                                                                { ; }
 %%
 
