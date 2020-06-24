@@ -6,16 +6,27 @@
 char* comp = " ;";
 %}
 
-%s DP PRED IND PPRED
+%s INDIVIDUO PAI MAE
 %%
-[a-zA-Z0-9_]*\ [;.,]                                                {if(strcmp(comp,yytext) != 0){      //all objects
-                                                                        yytext[yyleng-2] = '\0';
-                                                                        }
-                                                                    }
-(^:eMaeDe.*\n{1,2}.*)                                               {BEGIN PPRED;}
-<PPRED>(\n[ \t]+:|^:[ a-zA-Z]*rdf:|\t*rdf:|\t*rdfs:|\n[  ]*owl:)    {BEGIN PRED;}
-<PRED>[a-zA-Z]+                                                     {BEGIN INITIAL; printf("%s\n",yytext);} /*all predicates*/  
-.|\n                                                                { ; }
+^:                                                              {BEGIN INDIVIDUO;}
+<INDIVIDUO>[a-zA-Z]*_([a-zA-Z*_?])+([0-9]{4})?/[  ]rdf:         {BEGIN INITIAL; 
+                                                                 return SUBJECT;}
+[ \t]*":temMae :"                                               {BEGIN MAE;}
+<MAE>([a-zA-Z]*_)+([0-9]{4})?\ [;.,]                            {BEGIN INITIAL;
+                                                                 if(strcmp(comp,yytext) != 0){ //match all mother names
+                                                                     yytext[yyleng-2] = '\0';
+                                                                     return MAE;
+                                                                     }
+                                                                }
+[ \t]*":temPai :"                                               {BEGIN PAI;}
+<PAI>([a-zA-Z]*_)+([0-9]{4})?\ [;.,]                            {BEGIN INITIAL;
+                                                                 if(strcmp(comp,yytext) != 0){ //match all father names
+                                                                     yytext[yyleng-2] = '\0';
+                                                                     return PAI;
+                                                                     }
+                                                                }
+
+.|\n                                                            { ; }
 %%
 
 int main(int argc, char** argv){

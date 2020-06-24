@@ -1,0 +1,5 @@
+
+^:"eMaeDe "((.*\n){1,2}[ \t]+:|rdf:|(.*\n){1,2}\t*rdfs:|(.*\n){1,2}[  ]*owl:)  {BEGIN PRED;}     ->tentativa
+
+<PPRED>(\n[ \t]+:|^:[ a-zA-Z]*rdf:|\t*rdf:|\t*rdfs:|\n[  ]*owl:)    {BEGIN PRED;}*/              ->deteta todos os preds
+

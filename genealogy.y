@@ -3,47 +3,23 @@
 #include <strings.h>
 %}
 
-%union{ char* str; int num; }
-%token SUBJECT PREDICATE ID STR NUM
-%type <str> PSUBJECT PPREDICATE CSUBJECT CPREDICATE ISUBJECT IPREDICATE
-%type <str> PREDICATE
-%type <num> NUM
+%union{ char* extra_info; char* mae; char* pai; char* nome_individuo; }
+%token SUBJECT PREDICATE OBJECT MAE PAI
+%type <str> SUBJECT PREDICATE OBJECT MAE PAI
 
 %%
-Onthology : ListProperties ListClasses ListIndividuals
+Onthology : ListIndividuals Individual
+          | Individual
           ;
 
-ListProperties : ListProperties Property
-               | Property
-               ;
-
-ListClasses : ListClasses Class
-            | Class
-            ;
-
-ListIndividuals : ListIndividuals Individual
-                | Individual
-                ;
-
-Property : PSUBJECT PPREDICATE Object
-         | PPREDICATE Object
-         | Object
-         ;
-
-Class : CSUBJECT CPREDICATE Object
-      | CPREDICATE Object
-      | Object
-      ;
-
-Individual : ISUBJECT IPREDICATE Object
-           | IPREDICATE Object
-           | Object
+Individual : SUBJECT PREDICATE OBJECT
+           | Parent OBJECT
+           | OBJECT
            ;
 
-Object : ID
-       | STR
-       | NUM
-
+Parent : MAE
+       | PAI
+       ;
 %%
 
 int yyerror(char *s){
