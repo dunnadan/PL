@@ -1,29 +1,49 @@
 %{
 #include <stdio.h>
 #include <strings.h>
+
+int yylex(void);
+void yyerror(char *s);
 %}
 
-%union{ char* extra_info; char* mae; char* pai; char* nome_individuo; }
-%token SUBJECT PREDICATE OBJECT MAE PAI
-%type <str> SUBJECT PREDICATE OBJECT MAE PAI
+%union{  
+    char* mae; 
+    char* pai; 
+    char* nome_individuo;  
+    char* tem_mae; 
+    char* tem_pai; 
+    }
 
+%token <nome_individuo> SUBJECT
+%token PREDICATE
+%token <mae> MAE
+%token <pai> PAI
+%token OWL
+%token <tem_mae> TEMMAE
+%token <tem_pai> TEMPAI
 %%
-Onthology : ListIndividuals Individual
+Onthology : Onthology Individual
           | Individual
           ;
 
-Individual : SUBJECT PREDICATE OBJECT
-           | Parent OBJECT
-           | OBJECT
+Individual : SUBJECT PREDICATE Object
+           | Relation Object
+           | Object
            ;
 
-Parent : MAE
+Relation : TEMMAE
+         | TEMPAI
+         ;
+
+Object : MAE    { ; }
        | PAI
+       | OWL
        ;
 %%
+#include "genealogy.c"
 
-int yyerror(char *s){
-    fprintf(stderr, "ERRO: %s \n", s);
+void yyerror(char* s){
+    printf("Error: %s at line %d\n", s, yylineno);
 }
 
 

@@ -1,2 +1,4 @@
-coiso
+genealogy
 *.yy.c
+*.tab.*
+genealogy.c

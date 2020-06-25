@@ -3,3 +3,11 @@
 
 <PPRED>(\n[ \t]+:|^:[ a-zA-Z]*rdf:|\t*rdf:|\t*rdfs:|\n[  ]*owl:)    {BEGIN PRED;}*/              ->deteta todos os preds
 
+
+int main(int argc, char** argv){
+    yyin = fopen(argv[1], "r");
+    yylex();
+    fclose(yyin);
+    return 0;
+}
+
