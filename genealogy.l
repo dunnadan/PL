@@ -10,21 +10,13 @@ char* comp = " ;";
 %}
 
 
-%s ZINDIVIDUO ZPAI ZMAE ZPRED ZOWL
+%s ZINDIVIDUO ZPAI ZMAE
 %%
 ^:                                                              {BEGIN ZINDIVIDUO;}
 <ZINDIVIDUO>[a-zA-Z]*_[a-zA-Z_]+([0-9]{4})?                     {BEGIN INITIAL;
                                                                  yylval.nome_individuo = strdup(yytext); 
                                                                  return SUBJECT;
                                                                 }
-^:[a-zA-Z]*_[a-zA-Z_]+([0-9]{4})?[  ]rdf:                       {BEGIN ZPRED;}
-<ZPRED>[a-zA-Z]+                                                {BEGIN INITIAL;
-                                                                 printf("%s\n", yytext);
-                                                                 return PREDICATE; //match predicates
-                                                                }
-^:[a-zA-Z]*_[a-zA-Z_]+([0-9]{4})?[a-zA-Z: ]+owl:                {BEGIN ZOWL;}
-<ZOWL>[a-zA-Z]+/[  ][,.;]                                       {BEGIN INITIAL; 
-                                                                 return OWL;}   
 [ \t]*":temMae :"                                               {BEGIN ZMAE;
                                                                  return TEMMAE; //match temMae
                                                                 }
