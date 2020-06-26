@@ -20,7 +20,7 @@ char* comp = " ;";
 [ \t]*":temMae :"                                               {BEGIN ZMAE;
                                                                  return TEMMAE; //match temMae
                                                                 }
-<ZMAE>([a-zA-Z]*_)+([0-9]{4})?\ [;.,]                           {BEGIN INITIAL;
+<ZMAE>[a-zA-Z]*_[a-zA-Z_]+([0-9]{4})?\ [;.,]                    {BEGIN INITIAL;
                                                                  if(strcmp(comp,yytext) != 0){ //match all mother names
                                                                      yytext[yyleng-2] = '\0';
                                                                      yylval.mae = strdup(yytext);
@@ -30,7 +30,7 @@ char* comp = " ;";
 [ \t]*":temPai :"                                               {BEGIN ZPAI;
                                                                  return TEMPAI; //match temPai
                                                                 }
-<ZPAI>([a-zA-Z]*_)+([0-9]{4})?\ [;.,]                           {BEGIN INITIAL;
+<ZPAI>[a-zA-Z]*_[a-zA-Z_]+([0-9]{4})?\ [;.,]                    {BEGIN INITIAL;
                                                                  if(strcmp(comp,yytext) != 0){ //match all father names
                                                                      yytext[yyleng-2] = '\0';
                                                                      yylval.pai = strdup(yytext);
