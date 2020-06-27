@@ -10,5 +10,8 @@ build:
 	yacc -v -d -t genealogy.y
 	$(CC) y.tab.c $(CFLAGS) $(GLIB) -o $(OUTPUT)
 
+graph:
+	dot genealogy.dot -Tjpg -o graph.jpg
+
 clean:
-	rm -f y.* $(OUTPUT) $(SCANNER)
+	rm -f y.* $(OUTPUT) $(SCANNER) *.jpg *.dot
