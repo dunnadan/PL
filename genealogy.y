@@ -67,6 +67,29 @@ void yyerror(char* s){
 }
 
 
+void print_dot_file(GPtrArray* array){
+
+    FILE* fp = fopen("genealogy.dot", "w");
+    Pessoa_t p = NULL;
+    
+    fprintf(fp, "digraph G{\n");
+
+    for(int i = 0; i < pessoas->len; i++){
+        p = g_ptr_array_index (pessoas, i);
+        
+        if(p->mae != NULL && p->pai != NULL){
+            fprintf(fp, "\"%s\" -> \"%s\";\n\n", p->mae, p->nome);
+            fprintf(fp, "\"%s\" -> \"%s\";\n\n", p->pai, p->nome);
+        }else
+            fprintf(fp,"\"%s\";\n\n", p->nome);
+    }
+    
+    fprintf(fp, "}");
+    fclose(fp);
+}
+
+
+
 void print_array(GPtrArray* array){
     Pessoa_t p = NULL;
     for(int i = 0; i < pessoas->len; i++){
@@ -83,6 +106,7 @@ void print_array(GPtrArray* array){
 int main(){
     pessoas = g_ptr_array_new();
     yyparse();
-    print_array(pessoas);
+    //print_array(pessoas);
+    print_dot_file(pessoas);
     return(0);
 }
