@@ -1,0 +1,162 @@
+digraph G{
+"Custodia_Azevedo_1867" -> "Abilio_Silva_Ramalho";
+
+"Manuel_Silva_Ramalho_1866" -> "Abilio_Silva_Ramalho";
+
+"Maria_Araujo_1884" -> "Albina_Esteves_Araujo_1910";
+
+"Henrique_Luiz_Araujo_1867" -> "Albina_Esteves_Araujo_1910";
+
+"Maria_Margarida_Ribeiro_1954" -> "Ana_Margarida_Ribeiro_Leite_1980";
+
+"Rui_Alberto_Araujo_Leite_1948" -> "Ana_Margarida_Ribeiro_Leite_1980";
+
+"Custodia_Azevedo_1867" -> "Ana_Silva_Ramalho";
+
+"Manuel_Silva_Ramalho_1866" -> "Ana_Silva_Ramalho";
+
+"Antonio_Silva_Ramalho";
+
+"Custodia_Azevedo_1867" -> "Antonio_Silva_Ramalho_1904";
+
+"Manuel_Silva_Ramalho_1866" -> "Antonio_Silva_Ramalho_1904";
+
+"Custodia_Azevedo_1867" -> "Arminda_Silva_Ramalho";
+
+"Manuel_Silva_Ramalho_1866" -> "Arminda_Silva_Ramalho";
+
+"Christina_Rosa_Silva_Santos_1879";
+
+"Maria_Goncalves_Azevedo" -> "Custodia_Azevedo_1867";
+
+"Jose_Francisco_Ramos_Mouco" -> "Custodia_Azevedo_1867";
+
+"Maria_Araujo_1884" -> "Emilia_Esteves_Araujo_1908";
+
+"Henrique_Luiz_Araujo_1867" -> "Emilia_Esteves_Araujo_1908";
+
+"Custodia_Azevedo_1867" -> "Ezequiel_Silva_Ramalho";
+
+"Manuel_Silva_Ramalho_1866" -> "Ezequiel_Silva_Ramalho";
+
+"Maria_Araujo_1884" -> "Filomena_Esteves_Araujo_1927";
+
+"Henrique_Luiz_Araujo_1867" -> "Filomena_Esteves_Araujo_1927";
+
+"Flora_Castilho_Couto_Leite";
+
+"Christina_Rosa_Silva_Santos_1879" -> "Florinda_Alves_Santos";
+
+"Joze_Silva_Santos_1879" -> "Florinda_Alves_Santos";
+
+"Custodia_Azevedo_1867" -> "Generosa_Silva_Ramalho";
+
+"Manuel_Silva_Ramalho_1866" -> "Generosa_Silva_Ramalho";
+
+"Maria_Araujo_1884" -> "Henrique_Luis_Esteves_Araujo_1924";
+
+"Henrique_Luiz_Araujo_1867" -> "Henrique_Luis_Esteves_Araujo_1924";
+
+"Henrique_Luiz_Araujo_1867";
+
+"Maria_Esteves_Araujo_1912" -> "Henrique_Marcal_Araujo_Leite_1943";
+
+"Marcal_Aristides_Costa_Leite_1909" -> "Henrique_Marcal_Araujo_Leite_1943";
+
+"Maria_Otilia_Araujo_Leite_1944" -> "Henrique_Miguel_Cabrita_Araujo_Leite_1971";
+
+"Henrique_Marcal_Araujo_Leite_1943" -> "Henrique_Miguel_Cabrita_Araujo_Leite_1971";
+
+"Maria_Alves_Santos_1906" -> "Ilda_Santos_Ramalho_1949";
+
+"Antonio_Silva_Ramalho_1904" -> "Ilda_Santos_Ramalho_1949";
+
+"Maria_Otilia_Araujo_Leite_1944" -> "Isabel_Maria_Cabrita_Araujo_Leite_1971";
+
+"Henrique_Marcal_Araujo_Leite_1943" -> "Isabel_Maria_Cabrita_Araujo_Leite_1971";
+
+"Maria_Flora_Araujo_Leite_1941" -> "Jose_Carlos_Leite_Ramalho_1967";
+
+"Jose_Santos_Ramalho_1942" -> "Jose_Carlos_Leite_Ramalho_1967";
+
+"Maria_Araujo_1884" -> "Jose_Emilio_Esteves_Araujo_1916";
+
+"Henrique_Luiz_Araujo_1867" -> "Jose_Emilio_Esteves_Araujo_1916";
+
+"Jose_Francisco_Ramos_Mouco";
+
+"Maria_Alves_Santos_1906" -> "Jose_Santos_Ramalho_1942";
+
+"Antonio_Silva_Ramalho_1904" -> "Jose_Santos_Ramalho_1942";
+
+"Joze_Silva_Santos_1879";
+
+"Maria_Araujo_1884" -> "Luis_Esteves_Araujo_1918";
+
+"Henrique_Luiz_Araujo_1867" -> "Luis_Esteves_Araujo_1918";
+
+"Maria_Alves_Santos_1906" -> "Manuel_Carlos_Santos_Ramalho";
+
+"Antonio_Silva_Ramalho_1904" -> "Manuel_Carlos_Santos_Ramalho";
+
+"Maria_Alves_Santos_1906" -> "Manuel_Fernando_Santos_Ramalho";
+
+"Antonio_Silva_Ramalho_1904" -> "Manuel_Fernando_Santos_Ramalho";
+
+"Maria_Dias_Reis" -> "Manuel_Silva_Ramalho_1866";
+
+"Antonio_Silva_Ramalho" -> "Manuel_Silva_Ramalho_1866";
+
+"Flora_Castilho_Couto_Leite" -> "Marcal_Aristides_Costa_Leite_1909";
+
+"Marcal_Costa_Leite" -> "Marcal_Aristides_Costa_Leite_1909";
+
+"Marcal_Costa_Leite";
+
+"Christina_Rosa_Silva_Santos_1879" -> "Maria_Alves_Santos_1906";
+
+"Joze_Silva_Santos_1879" -> "Maria_Alves_Santos_1906";
+
+"Maria_Araujo_1884";
+
+"Maria_Dias_Reis";
+
+"Maria_Araujo_1884" -> "Maria_Esteves_Araujo_1912";
+
+"Henrique_Luiz_Araujo_1867" -> "Maria_Esteves_Araujo_1912";
+
+"Maria_Esteves_Araujo_1912" -> "Maria_Flora_Araujo_Leite_1941";
+
+"Marcal_Aristides_Costa_Leite_1909" -> "Maria_Flora_Araujo_Leite_1941";
+
+"Maria_Alves_Santos_1906" -> "Maria_Flora_Santos_Ramalho";
+
+"Antonio_Silva_Ramalho_1904" -> "Maria_Flora_Santos_Ramalho";
+
+"Maria_Goncalves_Azevedo";
+
+"Maria_Flora_Araujo_Leite_1941" -> "Maria_Helena_Leite_Ramalho_1968";
+
+"Jose_Santos_Ramalho_1942" -> "Maria_Helena_Leite_Ramalho_1968";
+
+"Maria_Margarida_Ribeiro_1954";
+
+"Maria_Otilia_Araujo_Leite_1944";
+
+"Maria_Esteves_Araujo_1912" -> "Rui_Alberto_Araujo_Leite_1948";
+
+"Marcal_Aristides_Costa_Leite_1909" -> "Rui_Alberto_Araujo_Leite_1948";
+
+"Maria_Araujo_1884" -> "Sara_Esteves_Araujo_1914";
+
+"Henrique_Luiz_Araujo_1867" -> "Sara_Esteves_Araujo_1914";
+
+"Maria_Margarida_Ribeiro_1954" -> "Teresa_Maria_Ribeiro_Leite_1985";
+
+"Rui_Alberto_Araujo_Leite_1948" -> "Teresa_Maria_Ribeiro_Leite_1985";
+
+"Maria_Araujo_1884" -> "Virginia_Esteves_Araujo_1921";
+
+"Henrique_Luiz_Araujo_1867" -> "Virginia_Esteves_Araujo_1921";
+
+}

@@ -1,3 +1,7 @@
+##########################
+#    Object Properties
+##########################
+
 :eMaeDe rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf :eProgenitorDe ;
         owl:inverseOf :temMae .
@@ -8,8 +12,9 @@
         rdfs:subPropertyOf :eProgenitorDe ;
         owl:inverseOf :temPai .
 
-
-#Classes
+################
+#    Classes
+################
 
 ###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Feminino
 :Feminino rdf:type owl:Class ;
@@ -22,8 +27,9 @@
            rdfs:subClassOf :Sexo .
 
 
-
-#Individuals
+############################
+# Individuals
+############################
 
 ###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Abilio_Silva_Ramalho
 :Abilio_Silva_Ramalho rdf:type owl:NamedIndividual ,
@@ -45,14 +51,14 @@
 
 
 ###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Abilio_Silva_Ramalho
-:Abilio_Silva_Ramalho rdf:type owl:NamedIndividual ,
+:Luis_Silva_Ramalho rdf:type owl:NamedIndividual ,
                                :Pessoa ;
                       :temMae :Custodia_Azevedo ;
                       :temPai :Manuel_Silva_Ramalho .
 
 
  ###  http://www.di.uminho.pt/prc/ontologies/2020/prc-genoa#Abilio_Silva_Ramalho
-:Abilio_Silva_Ramalho rdf:type owl:NamedIndividual ,
+:Carlos_Silva_Ramalho rdf:type owl:NamedIndividual ,
                                :Pessoa ;
                       :temMae :Custodia_Azevedo_1867 ;
                       :temPai :Manuel_Silva_Ramalho_1866 .

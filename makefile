@@ -1,6 +1,6 @@
 CC = gcc
 LEX = flex
-CFLAGS = -Wall -lm
+CFLAGS = -lm
 SCANNER = genealogy.c
 OUTPUT = genealogy
 GLIB = `pkg-config --cflags --libs glib-2.0`
