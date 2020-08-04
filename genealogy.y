@@ -7,7 +7,7 @@
 
 int yylex(void);
 void yyerror(char *s);
-int increment_current_index = 0; //1 quando se deve incrementar o index por nao ter pais
+int increment_current_index = 0; 
 int current_index = 0;
 GPtrArray* pessoas;
 
@@ -56,7 +56,7 @@ Object : MAE                    {Pessoa_t p2 = g_ptr_array_index(pessoas, curren
        | PAI                    {Pessoa_t p3 = g_ptr_array_index(pessoas, current_index);
                                  p3->pai = strdup($1);
                                  current_index++;
-                                 increment_current_index = 0;} //como tem pais, aqui ponho que nao e preciso incrementar
+                                 increment_current_index = 0;} 
        ;
 %%
 
@@ -90,23 +90,9 @@ void print_dot_file(GPtrArray* array){
 
 
 
-void print_array(GPtrArray* array){
-    Pessoa_t p = NULL;
-    for(int i = 0; i < pessoas->len; i++){
-        p = g_ptr_array_index (pessoas, i);
-        printf("Nome: %s\n", p->nome);
-        if(p->mae != NULL && p->pai != NULL){
-            printf("Mae: %s\n", p->mae);
-            printf("Pai: %s\n", p->pai);
-        }
-    }
-}
-
-
 int main(){
     pessoas = g_ptr_array_new();
     yyparse();
-    //print_array(pessoas);
     print_dot_file(pessoas);
     return(0);
 }

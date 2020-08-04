@@ -18,20 +18,20 @@ char* comp = " ;";
                                                                  return SUBJECT;
                                                                 }
 [ \t]*":temMae :"                                               {BEGIN ZMAE;
-                                                                 return TEMMAE; //match temMae
+                                                                 return TEMMAE; 
                                                                 }
 <ZMAE>[a-zA-Z]*_[a-zA-Z_]+([0-9]{4})?\ [;.,]                    {BEGIN INITIAL;
-                                                                 if(strcmp(comp,yytext) != 0){ //match all mother names
+                                                                 if(strcmp(comp,yytext) != 0){ 
                                                                      yytext[yyleng-2] = '\0';
                                                                      yylval.mae = strdup(yytext);
                                                                      return MAE;
                                                                      }
                                                                 }
 [ \t]*":temPai :"                                               {BEGIN ZPAI;
-                                                                 return TEMPAI; //match temPai
+                                                                 return TEMPAI; 
                                                                 }
 <ZPAI>[a-zA-Z]*_[a-zA-Z_]+([0-9]{4})?\ [;.,]                    {BEGIN INITIAL;
-                                                                 if(strcmp(comp,yytext) != 0){ //match all father names
+                                                                 if(strcmp(comp,yytext) != 0){ 
                                                                      yytext[yyleng-2] = '\0';
                                                                      yylval.pai = strdup(yytext);
                                                                      return PAI;
